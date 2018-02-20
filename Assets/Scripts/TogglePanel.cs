@@ -33,7 +33,6 @@ public class TogglePanel : MonoBehaviour
 
     public void OnClick_Chat(GameObject button)
     {
-        Debug.Log("has pulsado leis chats");
         chats.SetActive(true);
 
         if (button.activeSelf == true)

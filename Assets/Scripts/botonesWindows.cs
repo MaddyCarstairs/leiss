@@ -10,7 +10,6 @@ public class botonesWindows : MonoBehaviour
 
     public void OnWindows_Click(GameObject image)
     {
-        Debug.Log("Has pulsado el botón de Windows");
         image.SetActive(!image.activeSelf);
     }
     public void OnBusqueda_Click()
@@ -35,15 +34,13 @@ public class botonesWindows : MonoBehaviour
     }
 
     public void OnPuzzlesinicio_Click()
-    {
-        
+    {       
         myself.SetActive(false);
         puzzle.SetActive(true);
     }
 
     public void OnChatinicio_Click()
-    {
-        
+    {     
         myself.SetActive(false);
         chat.SetActive(true);
     }
@@ -64,7 +61,6 @@ public class botonesWindows : MonoBehaviour
     }
     public void OnPanelinicio_Click(GameObject image)
     {
-        Debug.Log("Has pulsado la ventana 4");
         image.SetActive(!image.activeSelf);
     }
 

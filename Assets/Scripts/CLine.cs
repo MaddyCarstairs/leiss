@@ -24,8 +24,8 @@ public class CLine {
         lr.startColor = Color.black;
         lr.endColor = Color.black;
 
-        lr.startWidth =1;
-        lr.endWidth = 1;
+        lr.startWidth = 10;
+        lr.endWidth = 10;
     }
 
     public void UpdateLine()
