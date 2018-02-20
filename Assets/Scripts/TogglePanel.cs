@@ -49,7 +49,7 @@ public class TogglePanel : MonoBehaviour
 
     public void onClose_PZLAlert(GameObject text)
     {
-        pzlAlert.SetActive(!panel.activeSelf);
+        pzlAlert.SetActive(false);
         text.SetActive(true);
     }
 

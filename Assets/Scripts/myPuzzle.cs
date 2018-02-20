@@ -6,7 +6,7 @@ public class myPuzzle : MonoBehaviour {
 
     [SerializeField] CLine[] myLines;
     [SerializeField] DragPanel myDragPanel;
-    [SerializeField] GameObject winPanel;
+    [SerializeField] GameObject completePzl;
 
 
     GameObject l1;
@@ -86,7 +86,7 @@ public class myPuzzle : MonoBehaviour {
     public IEnumerator EndPuzzle()
     {
         yield return new WaitForSeconds(0.3f);
-        winPanel.SetActive(true);
+        completePzl.SetActive(true);
         gameObject.SetActive(false);
     }
 }
