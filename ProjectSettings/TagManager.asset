@@ -4,10 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ponerdedo
+  - inicio
+  - chats
   - lr 0
-  - lr 1
   - lr 2
+  - lr 1
   - lr 3
+  - Alert1
+  - Alert2
+  - winpzl
   layers:
   - Default
   - TransparentFX

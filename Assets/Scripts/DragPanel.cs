@@ -3,8 +3,12 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
 
+public delegate void StandardDelegate(); //Toda función que tenga void sin parámetros de entrada se considerará delegate con esto.
+
 public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler
 {
+
+    event StandardDelegate OnMoveEvent;
 
     private Vector2 pointerOffset;
     private RectTransform canvasRectTransform;
@@ -39,6 +43,9 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler
         ))
         {
             panelRectTransform.localPosition = localPointerPosition - pointerOffset;
+
+            if (OnMoveEvent != null)
+                OnMoveEvent();
         }
     }
 
@@ -54,5 +61,15 @@ public class DragPanel : MonoBehaviour, IPointerDownHandler, IDragHandler
 
         Vector2 newPointerPosition = new Vector2(clampedX, clampedY);
         return newPointerPosition;
+    }
+
+    public void RegisterOnMoveEvent(StandardDelegate callback)
+    {
+        OnMoveEvent += callback;
+    }
+
+    public void UnregisterOnMoveEvent(StandardDelegate callback)
+    {
+        OnMoveEvent -= callback;
     }
 }

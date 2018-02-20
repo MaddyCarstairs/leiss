@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Hora : MonoBehaviour {
 
+
     public Text currentTime;
 	void Update () {
         currentTime.text =
