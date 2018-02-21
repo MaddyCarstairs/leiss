@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour {
     [SerializeField] GameObject alert1;
     [SerializeField] GameObject alert2;
 
+    [SerializeField] GameObject notTocuh;
+
     private void Start()
     {
         StartCoroutine(Alert());
@@ -34,6 +36,7 @@ public class GameController : MonoBehaviour {
         alert1.SetActive(false);
         yield return new WaitForSeconds(2);
         alert2.SetActive(true);
+        notTocuh.SetActive(false);
     }
 
     IEnumerator Chat()
