@@ -18,7 +18,7 @@ public class TogglePanel : MonoBehaviour
     {
         myIndex = 0;
         winds = GameObject.FindGameObjectWithTag("myWindows");
-        winds.transform.SetSiblingIndex(myIndex);
+        //winds.transform.SetSiblingIndex(myIndex);
     }
 
     public void onClose_puzzles()
