@@ -8,8 +8,7 @@ public class GameController : MonoBehaviour {
 
     [SerializeField] GameObject alert1;
     [SerializeField] GameObject alert2;
-
-    [SerializeField] GameObject notTocuh;
+    [SerializeField] GameObject MeshController;
 
     private void Start()
     {
@@ -36,13 +35,14 @@ public class GameController : MonoBehaviour {
         alert1.SetActive(false);
         yield return new WaitForSeconds(2);
         alert2.SetActive(true);
-        notTocuh.SetActive(false);
     }
 
-    IEnumerator Chat()
+     IEnumerator Chat()
     {
         alert2.SetActive(false);
         yield return new WaitForSeconds(2f);
         chatPanel.SetActive(true);
+       // MeshController.GetComponent<Newanimationcrtine>().StartCoroutine(Chat());
+        StartCoroutine(MeshController.GetComponent<Newanimationcrtine>().Chat());
     }
 }
