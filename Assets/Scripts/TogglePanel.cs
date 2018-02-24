@@ -6,9 +6,20 @@ public class TogglePanel : MonoBehaviour
 
     [SerializeField] GameObject panel;
     [SerializeField] GameObject chats;
+    [SerializeField] GameObject notes;
     [SerializeField] GameObject pzlAlert;
     [SerializeField] GameObject alert1;
     [SerializeField] GameObject alert2;
+
+    GameObject winds;
+    int myIndex;
+
+    private void Start()
+    {
+        myIndex = 0;
+        winds = GameObject.FindGameObjectWithTag("myWindows");
+        winds.transform.SetSiblingIndex(myIndex);
+    }
 
     public void onClose_puzzles()
     {
@@ -23,7 +34,19 @@ public class TogglePanel : MonoBehaviour
         if(button.activeSelf == true)
         {
             button.SetActive(false);
+            panel.transform.SetSiblingIndex(1);
+            chats.transform.SetSiblingIndex(0);
         }
+    }
+
+    public void OnClose_Notes()
+    {
+        notes.SetActive(false);
+    }
+
+    public void OnClick_Notes()
+    {
+        notes.SetActive(true);
     }
 
     public void TogglePanelMinimize(GameObject button)
@@ -39,6 +62,8 @@ public class TogglePanel : MonoBehaviour
         {
             button.SetActive(false);
         }
+        chats.transform.SetSiblingIndex(1);
+        panel.transform.SetSiblingIndex(0);
     }
 
     public void onClose_chats()
