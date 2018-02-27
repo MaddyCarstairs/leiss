@@ -52,6 +52,7 @@ public class pinchar : MonoBehaviour
             infoLista.SetActive(false);
             infoTimido.SetActive(false);
             infoGuapo.SetActive(false);
+            infoGuapa.SetActive(true);
         }
     }
     public void Onicono2_Click()
@@ -63,6 +64,8 @@ public class pinchar : MonoBehaviour
             infoLista.SetActive(false);
             infoTimido.SetActive(false);
             infoGuapa.SetActive(false);
+            infoGuapo.SetActive(true);
+
         }
     }
     public void Onicono3_Click()
@@ -74,6 +77,7 @@ public class pinchar : MonoBehaviour
             infoGuapo.SetActive(false);
             infoTimido.SetActive(false);
             infoGuapa.SetActive(false);
+            infoLista.SetActive(true);
         }
 
     }
@@ -86,6 +90,7 @@ public class pinchar : MonoBehaviour
             infoGuapo.SetActive(false);
             infoLista.SetActive(false);
             infoGuapa.SetActive(false);
+            infoTimido.SetActive(true);
         }
 
     }
