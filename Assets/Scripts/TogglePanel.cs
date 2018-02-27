@@ -34,9 +34,8 @@ public class TogglePanel : MonoBehaviour
         if(button.activeSelf == true)
         {
             button.SetActive(false);
-            panel.transform.SetSiblingIndex(1);
-            chats.transform.SetSiblingIndex(0);
         }
+        panel.transform.SetSiblingIndex(2);
     }
 
     public void OnClose_Notes()
@@ -47,11 +46,16 @@ public class TogglePanel : MonoBehaviour
     public void OnClick_Notes()
     {
         notes.SetActive(true);
+        notes.transform.SetSiblingIndex(2);
     }
 
     public void TogglePanelMinimize(GameObject button)
     {
         button.SetActive(!button.activeSelf);
+        if (button.activeSelf)
+        {
+            button.transform.SetSiblingIndex(2);
+        }
     }
 
     public void OnClick_Chat(GameObject button)
@@ -62,8 +66,8 @@ public class TogglePanel : MonoBehaviour
         {
             button.SetActive(false);
         }
-        chats.transform.SetSiblingIndex(1);
-        panel.transform.SetSiblingIndex(0);
+        chats.transform.SetSiblingIndex(2);
+
     }
 
     public void onClose_chats()
