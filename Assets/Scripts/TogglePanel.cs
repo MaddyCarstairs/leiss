@@ -4,7 +4,8 @@ using System.Collections;
 public class TogglePanel : MonoBehaviour
 {
 
-    [SerializeField] GameObject panel;
+    [SerializeField] GameObject puzzle;
+    [SerializeField] GameObject puzzleCanvasOriginal;
     [SerializeField] GameObject chats;
     [SerializeField] GameObject notes;
     [SerializeField] GameObject renderlines;
@@ -24,15 +25,15 @@ public class TogglePanel : MonoBehaviour
 
     public void onClose_puzzles()
     {
-        panel.SetActive(!panel.activeSelf);
+        puzzle.SetActive(!puzzle.activeSelf);
         renderlines.SetActive(false);
     }
 
     public void OnClick_Puzzle(GameObject button)
     {
 
-        panel.SetActive(true);
-        //hats.SetActive(false);
+        puzzle.SetActive(true);
+        //chats.SetActive(false);
         //notes.SetActive(false);
         renderlines.SetActive(true);
 
@@ -40,7 +41,7 @@ public class TogglePanel : MonoBehaviour
         {
             button.SetActive(false);
         }
-        panel.transform.SetSiblingIndex(2);
+        puzzle.transform.SetSiblingIndex(2);
     }
 
     public void OnClose_Notes()
@@ -59,10 +60,46 @@ public class TogglePanel : MonoBehaviour
 
     public void TogglePanelMinimize(GameObject button)
     {
+        //button.SetActive(!button.activeSelf);
+        //if (button.activeSelf)
+        //{
+        //    button.transform.SetSiblingIndex(2);
+        //    if (button.tag == "winplz")
+        //    {
+        //        //button.SetActive(!button.activeSelf);
+        //        //if (button.activeSelf)
+        //        //{
+        //        //    button.SetActive(true);
+        //        //    renderlines.SetActive(true);
+        //        //}
+        //        //else
+        //        //{
+        //        //    renderlines.SetActive(false);
+        //        //    button.SetActive(false);
+        //        //}
+        //    }
+        //}
+
         button.SetActive(!button.activeSelf);
         if (button.activeSelf)
         {
             button.transform.SetSiblingIndex(2);
+        }
+    }
+
+    public void MinimizePuzzle(GameObject buttonMin)
+    {
+        if (puzzle.activeSelf)
+        {
+            buttonMin.SetActive(true);
+            puzzle.SetActive(false);
+            puzzleCanvasOriginal.SetActive(false);
+        }
+        else
+        {
+            buttonMin.SetActive(false);
+            puzzle.SetActive(true);
+            puzzleCanvasOriginal.SetActive(true);
         }
     }
 
