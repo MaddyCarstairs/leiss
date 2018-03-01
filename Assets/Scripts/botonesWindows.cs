@@ -5,10 +5,17 @@ using UnityEngine;
 public class botonesWindows : MonoBehaviour
 {
     [SerializeField] GameObject puzzle;
+    [SerializeField] GameObject renderlines;
     [SerializeField] GameObject chat;
+    [SerializeField] GameObject notes;
     [SerializeField] GameObject myself;
+    int myIndex;
+    private void Start()
+    {
+        myIndex = 0;
+    }
 
-    public void OnWindows_Click(GameObject image)
+        public void OnWindows_Click(GameObject image)
     {
         image.SetActive(!image.activeSelf);
     }
@@ -24,11 +31,17 @@ public class botonesWindows : MonoBehaviour
     public void OnLeis_Click(GameObject panel)
     {
         panel.SetActive(true);
+        //puzzle.SetActive(false);
+        //notes.SetActive(false);
+        renderlines.SetActive(false);
         panel.transform.SetSiblingIndex(2);
     }
     public void OnPuzzles_Click(GameObject panel)
     {
         panel.SetActive(true);
+        //chat.SetActive(false);
+        //notes.SetActive(false);
+        renderlines.SetActive(true);
         panel.transform.SetSiblingIndex(2);
     }
 
@@ -36,6 +49,10 @@ public class botonesWindows : MonoBehaviour
     {       
         myself.SetActive(false);
         puzzle.SetActive(true);
+        //chat.SetActive(false);
+        //notes.SetActive(false);
+        renderlines.SetActive(true);
+
         puzzle.transform.SetSiblingIndex(2);
     }
 
@@ -43,6 +60,10 @@ public class botonesWindows : MonoBehaviour
     {     
         myself.SetActive(false);
         chat.SetActive(true);
+        //puzzle.SetActive(false);
+        //notes.SetActive(false);
+        renderlines.SetActive(false);
+
         chat.transform.SetSiblingIndex(2);
     }
 

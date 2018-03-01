@@ -7,6 +7,7 @@ public class TogglePanel : MonoBehaviour
     [SerializeField] GameObject panel;
     [SerializeField] GameObject chats;
     [SerializeField] GameObject notes;
+    [SerializeField] GameObject renderlines;
     [SerializeField] GameObject pzlAlert;
     [SerializeField] GameObject alert1;
     [SerializeField] GameObject alert2;
@@ -17,21 +18,25 @@ public class TogglePanel : MonoBehaviour
     private void Start()
     {
         myIndex = 0;
-        winds = GameObject.FindGameObjectWithTag("myWindows");
+        //winds = GameObject.FindGameObjectWithTag("myWindows");
         //winds.transform.SetSiblingIndex(myIndex);
     }
 
     public void onClose_puzzles()
     {
         panel.SetActive(!panel.activeSelf);
+        renderlines.SetActive(false);
     }
 
     public void OnClick_Puzzle(GameObject button)
     {
 
         panel.SetActive(true);
+        //hats.SetActive(false);
+        //notes.SetActive(false);
+        renderlines.SetActive(true);
 
-        if(button.activeSelf == true)
+        if (button.activeSelf == true)
         {
             button.SetActive(false);
         }
@@ -46,6 +51,9 @@ public class TogglePanel : MonoBehaviour
     public void OnClick_Notes()
     {
         notes.SetActive(true);
+        //chats.SetActive(false);
+        //panel.SetActive(false);
+        renderlines.SetActive(false);
         notes.transform.SetSiblingIndex(2);
     }
 
@@ -61,6 +69,9 @@ public class TogglePanel : MonoBehaviour
     public void OnClick_Chat(GameObject button)
     {
         chats.SetActive(true);
+        //notes.SetActive(false);
+        //panel.SetActive(false);
+        renderlines.SetActive(false);
 
         if (button.activeSelf == true)
         {

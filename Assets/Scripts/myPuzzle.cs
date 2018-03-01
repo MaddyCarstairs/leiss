@@ -21,8 +21,14 @@ public class myPuzzle : MonoBehaviour {
         for (int i = 0; i < myLines.Length; ++i)
         {
             myLines[i].InitLine(transform, i);
+
         }
-       // winpanel = GameObject.FindGameObjectWithTag("winpzl");
+        // winpanel = GameObject.FindGameObjectWithTag("winpzl");
+
+        GameObject.FindGameObjectWithTag("lr 0").layer = 8;
+        GameObject.FindGameObjectWithTag("lr 1").layer = 8;
+        GameObject.FindGameObjectWithTag("lr 2").layer = 8;
+        GameObject.FindGameObjectWithTag("lr 3").layer = 8;
 
         myDragPanel.RegisterOnMoveEvent(UpdateLines);
 

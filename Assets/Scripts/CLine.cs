@@ -19,6 +19,7 @@ public class CLine {
 
         lr.material = new Material(Shader.Find("Sprites/Default"));
         lr.tag = "lr " + index;
+        //lr.GetComponent<GameObject>().layer = 8;
 
         lr.SetPositions(new Vector3[] { origin.position, dest.position });
         lr.startColor = Color.black;
@@ -27,6 +28,7 @@ public class CLine {
         lr.startWidth = 10;
         lr.endWidth = 10;
     }
+
 
     public void UpdateLine()
     {
