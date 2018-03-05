@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class BlocNotes : MonoBehaviour {
 
     [SerializeField] InputField textInput;
-    [SerializeField] Text saveText;
     [SerializeField] GameObject sobre;
     bool alreadyName;
     string myText;
+    public string mySaveText;
 
     
 
@@ -19,8 +19,8 @@ public class BlocNotes : MonoBehaviour {
         {
             textInput.text = myText;
         }
-        saveText.text = "No hay nada escrito de momento";
         textInput.text = "escribe algo";
+        mySaveText = textInput.text;
     }
 
     public void OnSave_click(GameObject save)
@@ -32,7 +32,7 @@ public class BlocNotes : MonoBehaviour {
 
     void ActualizeText2()
     {
-        saveText.text = myText;
+        textInput.text = mySaveText;
     }
 
     public void ShowSave(GameObject save)
@@ -45,6 +45,7 @@ public class BlocNotes : MonoBehaviour {
     {
         alreadyName = true;
         myText = textInput.text;
+        mySaveText = myText;
 
         ActualizeText2();
         sobre.SetActive(false);
@@ -52,7 +53,11 @@ public class BlocNotes : MonoBehaviour {
 
     public void onNo_Click()
     {
+        //saveText.text = mySaveText;
+        ActualizeText2();
         sobre.SetActive(false);
+        
+
     }
 }
 

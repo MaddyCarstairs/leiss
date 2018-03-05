@@ -93,13 +93,13 @@ public class TogglePanel : MonoBehaviour
         {
             buttonMin.SetActive(true);
             puzzle.SetActive(false);
-            puzzleCanvasOriginal.SetActive(false);
+            renderlines.SetActive(false);
         }
         else
         {
             buttonMin.SetActive(false);
             puzzle.SetActive(true);
-            puzzleCanvasOriginal.SetActive(true);
+            renderlines.SetActive(true);
         }
     }
 

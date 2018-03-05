@@ -114,7 +114,7 @@ public class CLine {
             }
         }
 
-        Debug.Log(intersect + " es que sale de cline");
+
         return intersect;
  
     }

@@ -47,7 +47,6 @@ public class myPuzzle : MonoBehaviour {
                     intersect = CLine.SegmentIntersection(myLines[i], myLines[j]);
                     if (intersect)
                     {
-                        Debug.Log("Check " + intersect);
                         Color2Line(i, j, Color.red);
                         return intersect;
                     }
