@@ -14,6 +14,13 @@ TagManager:
   - Alert1
   - Alert2
   - winpzl
+  - nancyAf
+  - kieranAf
+  - myWindows
+  - jackAf
+  - thaiAf
+  - winChat
+  - winPuzzle
   layers:
   - Default
   - TransparentFX
@@ -23,7 +30,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - UI2
   - 
   - 
   - 
