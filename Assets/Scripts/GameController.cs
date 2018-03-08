@@ -9,9 +9,16 @@ public class GameController : MonoBehaviour {
     [SerializeField] GameObject alert1;
     [SerializeField] GameObject alert2;
     [SerializeField] GameObject MeshController;
+    [SerializeField] GameObject chatWin;
+    AudioSource leisAlert;
+    AudioSource leisAlert2;
+    AudioSource chatAlert;
 
     private void Start()
     {
+        leisAlert = alert1.GetComponent<AudioSource>();
+        leisAlert2 = alert2.GetComponent<AudioSource>();
+        chatAlert = chatWin.GetComponent<AudioSource>();
         StartCoroutine(Alert());
     }
 
@@ -29,12 +36,14 @@ public class GameController : MonoBehaviour {
     {
         yield return new WaitForSeconds(2);
         alert1.SetActive(true);
+        leisAlert.Play();
     }
     IEnumerator Alert2()
     {
         alert1.SetActive(false);
         yield return new WaitForSeconds(2);
         alert2.SetActive(true);
+        leisAlert2.Play();
     }
 
      IEnumerator Chat()
@@ -42,7 +51,8 @@ public class GameController : MonoBehaviour {
         alert2.SetActive(false);
         yield return new WaitForSeconds(2f);
         chatPanel.SetActive(true);
-       // MeshController.GetComponent<Newanimationcrtine>().StartCoroutine(Chat());
+        chatAlert.Play();
+        // MeshController.GetComponent<Newanimationcrtine>().StartCoroutine(Chat());
         StartCoroutine(MeshController.GetComponent<Newanimationcrtine>().Chat());
     }
 }
