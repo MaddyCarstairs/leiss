@@ -7,14 +7,20 @@ public class Salir : MonoBehaviour {
 
     [SerializeField] GameObject panelSalir;
     public GameObject image;
+    public GameObject image1;
     public Button button;
+    public Button button1;
 
     void Start()
     {
         button.onClick.AddListener(() => {
             image.SetActive(true);
         });
+        button1.onClick.AddListener(() => {
+            image1.SetActive(true);
+        });
     }
+
 
 
 //public void OnSalir_Click()
@@ -38,6 +44,10 @@ public class Salir : MonoBehaviour {
            {
           panelSalir.SetActive(false);
           }
+        if (image1.activeSelf == true)
+        {
+            image1.SetActive(false);
+        }
 
     }
 
