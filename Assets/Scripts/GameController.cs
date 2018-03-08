@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     [SerializeField] GameObject alert2;
     [SerializeField] GameObject MeshController;
     [SerializeField] GameObject chatWin;
+    [SerializeField] GameObject noTouch;
     AudioSource leisAlert;
     AudioSource leisAlert2;
     AudioSource chatAlert;
@@ -44,6 +45,7 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(2);
         alert2.SetActive(true);
         leisAlert2.Play();
+        noTouch.SetActive(false);
     }
 
      IEnumerator Chat()
