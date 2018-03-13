@@ -5,46 +5,45 @@ using UnityEngine;
 public class Usclick : MonoBehaviour
 {
 
-    [SerializableField] GameObject maddyImg;
-    [SerializableField] GameObject meriditchImg;
-    [SerializableField] GameObject rataixImg;
-    [SerializableField] GameObject carlosImg;
-    [SerializableField] GameObject maddyInfo;
-    [SerializableField] GameObject meriditchInfo;
-    [SerializableField] GameObject ratarixInfo;
-    [SerializableField] GameObject carlosInfo;
+
+    [SerializeField]
+    GameObject maddyInfo;
+    [SerializeField]
+    GameObject meriditchInfo;
+    [SerializeField]
+    GameObject ratarixInfo;
+    [SerializeField]
+    GameObject carlosInfo;
 
     public void OnMaddy_Click()
     {
         maddyInfo.SetActive(!maddyInfo.activeSelf);
         if (maddyInfo.activeSelf == true)
         {
-            infoLista.SetActive(false);
+            meriditchInfo.SetActive(false);
             ratarixInfo.SetActive(false);
-            infoGuapo.SetActive(false);
+            carlosInfo.SetActive(false);
             maddyInfo.SetActive(true);
         }
     }
     public void OnMeriditch_Click()
     {
-        Debug.Log("Has pulsado a el guapo");
-        infoGuapo.SetActive(!infoGuapo.activeSelf);
-        if (infoGuapo.activeSelf == true)
+        meriditchInfo.SetActive(!meriditchInfo.activeSelf);
+        if (meriditchInfo.activeSelf == true)
         {
-            infoLista.SetActive(false);
+            carlosInfo.SetActive(false);
             ratarixInfo.SetActive(false);
             maddyInfo.SetActive(false);
-            infoGuapo.SetActive(true);
+            meriditchInfo.SetActive(true);
 
         }
     }
     public void OnRatarix_Click()
     {
-        Debug.Log("Has pulsado a la lista");
         ratarixInfo.SetActive(!ratarixInfo.activeSelf);
         if (ratarixInfo.activeSelf == true)
         {
-            infoGuapo.SetActive(false);
+            carlosInfo.SetActive(false);
             ratarixInfo.SetActive(false);
             maddyInfo.SetActive(false);
             ratarixInfo.SetActive(true);
@@ -53,14 +52,13 @@ public class Usclick : MonoBehaviour
     }
     public void OnCarlos_Click()
     {
-        Debug.Log("Has pulsado al timido");
-        infoTimido.SetActive(!infoTimido.activeSelf);
-        if (infoTimido.activeSelf == true)
+        carlosInfo.SetActive(!carlosInfo.activeSelf);
+        if (carlosInfo.activeSelf == true)
         {
-            infoGuapo.SetActive(false);
-            infoLista.SetActive(false);
+            meriditchInfo.SetActive(false);
+            ratarixInfo.SetActive(false);
             maddyInfo.SetActive(false);
-            infoTimido.SetActive(true);
+            carlosInfo.SetActive(true);
         }
     }
 }
