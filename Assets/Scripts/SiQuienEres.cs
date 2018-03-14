@@ -246,6 +246,9 @@ public class SiQuienEres : MonoBehaviour
     [SerializeField] GameObject btn3no;
     [SerializeField] GameObject btn5no;
     [SerializeField] GameObject btn6no;
+    [SerializeField] GameObject btn7nn;
+    [SerializeField] GameObject btn8nn;
+    [SerializeField] GameObject btn9nn;
 
 
 
@@ -383,6 +386,9 @@ public class SiQuienEres : MonoBehaviour
     [SerializeField] GameObject text2_16;
     [SerializeField] GameObject text3_16;
 
+    [SerializeField] GameObject text2_16nn;//For "Bueno... si no se quiere presentar, no pasa nada...¿no?" noname
+    [SerializeField] GameObject text3_16nn;
+
 
     [SerializeField] GameObject text1_17; //Para "¿Por que no simplemente dices tu nombre y ya? No creo que sea tan difícil." nonp
     [SerializeField] GameObject text2_17;
@@ -390,11 +396,15 @@ public class SiQuienEres : MonoBehaviour
     [SerializeField] GameObject text4_17;
     [SerializeField] GameObject text5_17;
 
+    [SerializeField] GameObject text5_17nn; //For "¿Por que no simplemente dices tu nombre y ya? No creo que sea tan difícil." noname
+
 
     [SerializeField] GameObject text1_18; //Para "Venga... No discutais.... Recordad que estamos a prueba para el trabajo..." nonp
     [SerializeField] GameObject text2_18;
     [SerializeField] GameObject text3_18;
 
+
+    [SerializeField] GameObject text3_18nn;//Para "Venga... No discutais.... Recordad que estamos a prueba para el trabajo..." noname
 
     [SerializeField] GameObject text1_19; //Para "Yo soy MC" nonp
     [SerializeField] GameObject text2_19;
@@ -425,20 +435,22 @@ public class SiQuienEres : MonoBehaviour
     [SerializeField] GameObject text4_22;
 
 
-    [SerializeField] GameObject text1_23; //Para "   " nonp
+    [SerializeField] GameObject text1_23; //Para "Pues nada.... Buena suerte a tod@s :)" nonp
     [SerializeField] GameObject text2_23;
     [SerializeField] GameObject text3_23;
     [SerializeField] GameObject text4_23;
+    [SerializeField] GameObject text5_23;
 
 
-    [SerializeField] GameObject text1_24; //Para "   " nonp
+    [SerializeField] GameObject text1_24; //Para "  Dios....La que nos espera....   " nonp
     [SerializeField] GameObject text2_24;
     [SerializeField] GameObject text3_24;
     [SerializeField] GameObject text4_24;
+    [SerializeField] GameObject text5_24;
 
 
 
-    [SerializeField] GameObject text1_25; //Para "   " nonp
+    [SerializeField] GameObject text1_25; //Para "El trabajo será mio >:) " nonp
     [SerializeField] GameObject text2_25;
     [SerializeField] GameObject text3_25;
     [SerializeField] GameObject text4_25;
@@ -558,7 +570,92 @@ public class SiQuienEres : MonoBehaviour
         StartCoroutine(None2());
     }
 
-    IEnumerator QuienEres()                                                                                                 //Si eliges "Si, ¿Quién eres?"
+    public void On_Nonedespuesde1noneClick() //??
+    {
+        StartCoroutine(NondedNon());
+    }
+
+    public void On_None3Click()
+    {
+        StartCoroutine(None3());
+    }
+
+    public void On_SuerteClicknp()
+    {
+        StartCoroutine(BuenaSuertenopres());
+    }
+
+    public void On_LaquesperaClicknp()
+    {
+        StartCoroutine(LaQNosEsperanopres());
+    }
+
+    public void On_TrabajomineClicknp()
+    {
+        StartCoroutine(TrabajoMionopres());
+    }
+
+    public void On_None3Clicknp()
+    {
+        StartCoroutine(nopres());
+    }
+
+    public void On_SiNoQuierenp()
+    {
+        StartCoroutine(BuenoSiNoQuiereSinPresen());
+    }
+
+    public void On_PorQueNoSimplenp()
+    {
+        StartCoroutine(PorQueNoSimplementenopres());
+    }
+
+    public void On_TrabajoClicknp()
+    {
+        StartCoroutine(VengaNoDiscutaisnopres());
+    }
+
+    public void On_NONE2npClick()
+    {
+        StartCoroutine(None2nopres());
+    }
+
+    public void On_YoSoyMCnpClick()
+    {
+        StartCoroutine(YoSoyMcnopres());
+    }
+
+    public void On_MCnpClick()
+    {
+        StartCoroutine(Mcnopres());
+    }
+
+    public void On_YPorQuenpClick()
+    {
+        StartCoroutine(YPorQueDeberianopres());
+    }
+
+    public void On_NonePresNpClick()
+    {
+        StartCoroutine(None1delnopresen());
+    }
+
+    public void On_SiNoQuierenn()
+    {
+        StartCoroutine(BuenoSiNoQuierenoname());
+    }
+
+    public void On_PorQueNoSimplenn()
+    {
+        StartCoroutine(PorQueNoSimplementenoname());
+    }
+
+    public void On_TrabajoClicknn()
+    {
+        StartCoroutine(VengaNoDiscutaisnoname());
+    }
+
+    IEnumerator QuienEres()                                                                                                 //If you choose "Si, ¿Quién eres?"
     {
 
         affin.GetComponent<Affinity>().moreaf(10f, "nancy");
@@ -572,17 +669,18 @@ public class SiQuienEres : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         t9.SetActive(true);
+        t10.SetActive(true);
         text2.SetActive(true);              //Nancy Melson y tu? :)
         btn1.SetActive(false);
 
 
         yield return new WaitForSeconds(2);
-        t10.SetActive(true);
+        t11.SetActive(true);
         text3.SetActive(true);              //Jack.
 
 
         yield return new WaitForSeconds(1.5f);
-        t11.SetActive(true);
+       
         text4.SetActive(true);              //¿Y tu eres...?
 
 
@@ -595,7 +693,7 @@ public class SiQuienEres : MonoBehaviour
 
 
 
-    IEnumerator Hola()                                                                                                      //Si eliges "Hola..."
+    IEnumerator Hola()                                                                                                      //If you choose "Hola..."
     {
         affin.GetComponent<Affinity>().moreaf(10f, "jack");
         t8.SetActive(true);
@@ -607,12 +705,13 @@ public class SiQuienEres : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         t9.SetActive(true);
+        t10.SetActive(true);
         text2_1.SetActive(true);              //holiiiii :)))
         btn2.SetActive(false);
 
 
         yield return new WaitForSeconds(2);
-        t10.SetActive(true);
+        
         text3_1.SetActive(true);              //Soy Nancy y tu? ;)
 
 
@@ -630,7 +729,7 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator YoSoyMc()                                                                                                   //Si eliges "Yo soy MC"
+    IEnumerator YoSoyMc()                                                                                                   //If you choose "Yo soy MC"
     {
         affin.GetComponent<Affinity>().moreaf(10f, "nancy");
         t12.SetActive(true);
@@ -646,16 +745,17 @@ public class SiQuienEres : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         t13.SetActive(true);
+        t14.SetActive(true);
         text2_2.SetActive(true);                //Iguakmenteeeeee  ^o^  
 
 
         yield return new WaitForSeconds(2);
-        t14.SetActive(true);
+        t15.SetActive(true);
         text3_2.SetActive(true);                //Encantado.
 
 
         yield return new WaitForSeconds(2);
-        t15.SetActive(true);
+        t16.SetActive(true);
         text4_2.SetActive(true);                //:D
 
 
@@ -666,7 +766,7 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator Mc()                                                                                                        //Si eliges "MC"
+    IEnumerator Mc()                                                                                                        //If you choose "MC"
     {
         affin.GetComponent<Affinity>().moreaf(10f, "jack");
         t12.SetActive(true);
@@ -681,20 +781,22 @@ public class SiQuienEres : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         t13.SetActive(true);
+        t14.SetActive(true);
         text2_3.SetActive(true);                //Ah, bien.  
 
 
         yield return new WaitForSeconds(1.5f);
+        t15.SetActive(true);
         text3_3.SetActive(true);                //Hola, MC. 
 
 
         yield return new WaitForSeconds(2);
-        t14.SetActive(true);
+        
         text4_3.SetActive(true);                //Soy Jack. 
 
 
         yield return new WaitForSeconds(2);
-        t15.SetActive(true);
+        t16.SetActive(true);
         text5_3.SetActive(true);                //Mucho gustoooo MC soy Nancyy :)))
 
 
@@ -705,7 +807,7 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator YPorQueDeberia()                                                                                            //Si eliges "¿Y por qué debería presentarme? No os conozco de nada."
+    IEnumerator YPorQueDeberia()                                                                                            //If you choose "¿Y por qué debería presentarme? No os conozco de nada."
     {
 
         affin.GetComponent<Affinity>().lessaf(10f, "nancy");
@@ -720,34 +822,36 @@ public class SiQuienEres : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         t13.SetActive(true);
+        t14.SetActive(true);
         text2_4.SetActive(true);                //Hayyyy cieloooo.  
 
 
         yield return new WaitForSeconds(1.5f);
-        t13.SetActive(true);
+       
         text3_4.SetActive(true);                //K cascarrabias eres u_u”
 
 
         yield return new WaitForSeconds(2);
-        t14.SetActive(true);
+        t15.SetActive(true);
         text4_4.SetActive(true);                //Pero lo que dice es razonable.
 
 
         yield return new WaitForSeconds(2);
-        t15.SetActive(true);
+        t16.SetActive(true);
         text5_4.SetActive(true);                //T_T
 
 
         yield return new WaitForSeconds(2);
         StartCoroutine(Continue1());
         yield return new WaitForSeconds(60);
-        StartCoroutine(Nopresen());
+        StartCoroutine(Noname());
     }
 
 
-    IEnumerator None1()                                                                                                     //Si eliges "   "
+    IEnumerator None1()                                                                                                     //If you choose "   "
     {
-
+        affin.GetComponent<Affinity>().lessaf(10f, "nancy");
+        affin.GetComponent<Affinity>().lessaf(10f, "jack");
         btn3.SetActive(false);   //Dile bye bye a los demás botones xD
         btn4.SetActive(false);
         btn5.SetActive(false);
@@ -761,19 +865,20 @@ public class SiQuienEres : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         t13.SetActive(true);
+        t14.SetActive(true);
         text2_5.SetActive(true);                //Huyyyy k borde T-T
 
         yield return new WaitForSeconds(1.5f);
-        t13.SetActive(true);
-        text2_5.SetActive(true);                //Kt cuesta???
+       
+        text3_5.SetActive(true);                //Kt cuesta???
 
         yield return new WaitForSeconds(2);
-        t14.SetActive(true);
-        text2_5.SetActive(true);                //Costar, nada, pero no parece que vaya a respondernos...
+        t15.SetActive(true);
+        text4_5.SetActive(true);                //Costar, nada, pero no parece que vaya a respondernos...
 
         yield return new WaitForSeconds(1.5f);
-        t14.SetActive(true);
-        text2_5.SetActive(true);                //Kt cuesta???
+        t16.SetActive(true);
+        text5_5.SetActive(true);                //Kt cuesta???
 
         yield return new WaitForSeconds(2);     //Joooooooo ;-;
         StartCoroutine(Continue1());
@@ -931,9 +1036,18 @@ public class SiQuienEres : MonoBehaviour
         btn10no.SetActive(true);
     }
 
+    IEnumerator Noname()  //Esto es para seguir la conversación si has pasado de responder nada o no has hablado en toda la conversación :) Haber si ya de paso te acuerdas de meter la variante de que no te quieres presentar porque eres especial, que ya va siendo hora de que las cosas funcionen correctamente, ¿no? con esa memoria, no se como te vas a aprender el guion de la obra ¬.¬;;
+    {
+        yield return new WaitForSeconds(2);
+        btn7nn.SetActive(true);                  //Election time >:D
+        btn8nn.SetActive(true);
+        btn9nn.SetActive(true);
+        btn10.SetActive(true);
+    }
 
 
-    IEnumerator BuenoSiNoQuiere()                                                                                                     //Si eliges "Bueno... si no se quiere presentar, no pasa nada...¿no?"
+
+    IEnumerator BuenoSiNoQuiere()                                                                                                     //If you choose "Bueno... si no se quiere presentar, no pasa nada...¿no?"
     {
         affin.GetComponent<Affinity>().moreaf(10f, "nancy");
         affin.GetComponent<Affinity>().moreaf(5f, "thai");
@@ -989,7 +1103,7 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator PorQueNoSimplemente()                                                                                                     //Si eliges "¿Por que no simplemente dices tu nombre y ya? No creo que sea tan difícil."
+    IEnumerator PorQueNoSimplemente()                                                                                                     //If you choose "¿Por que no simplemente dices tu nombre y ya? No creo que sea tan difícil."
     {
         affin.GetComponent<Affinity>().moreaf(10f, "jack");
         affin.GetComponent<Affinity>().lessaf(10f, "kieran");
@@ -1050,7 +1164,7 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator VengaNoDiscutais()                                                                                                     //Venga... No discutais.... Recordad que estamos a prueba para el trabajo...
+    IEnumerator VengaNoDiscutais()                                                                                                     //If you choose "Venga... No discutais.... Recordad que estamos a prueba para el trabajo..."
     {
         affin.GetComponent<Affinity>().moreaf(10f, "thai");
         affin.GetComponent<Affinity>().moreaf(10f, "kieran");
@@ -1080,18 +1194,19 @@ public class SiQuienEres : MonoBehaviour
 
         yield return new WaitForSeconds(2);
         t50.SetActive(true);
+        t51.SetActive(true);
         text6_8.SetActive(true);                //Hum... no discutais mas... ¿si?
 
         yield return new WaitForSeconds(2);
-        t51.SetActive(true);
+        t52.SetActive(true);
         text7_8.SetActive(true);                //Esso esoooooo >:((
 
         yield return new WaitForSeconds(2);
-        t52.SetActive(true);
+        
         text8_8.SetActive(true);                //Hacednos csoo plss!!
-
-        yield return new WaitForSeconds(2);
         t53.SetActive(true);
+        yield return new WaitForSeconds(2);
+        
         text9_8.SetActive(true);                //Ke estas¡is discutiendo por bobadasss
         t54.SetActive(true);
         yield return new WaitForSeconds(2);
@@ -1104,7 +1219,7 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator None2()                                                                                                     //" "
+    IEnumerator None2()                                                                                                     //If you choose " "
     {
 
         btn7.SetActive(false); //Dile bye bye a los demás botones xD
@@ -1113,7 +1228,13 @@ public class SiQuienEres : MonoBehaviour
         btn7no.SetActive(false);
         btn8no.SetActive(false);
         btn9no.SetActive(false);
-        btn10.SetActive(false);
+        btn10.SetActive(false);     
+        btn10no.SetActive(false);
+        btn7nn.SetActive(false);
+        btn8nn.SetActive(false);
+        btn9nn.SetActive(false);
+
+
 
 
         yield return new WaitForSeconds(1.5f);
@@ -1121,11 +1242,11 @@ public class SiQuienEres : MonoBehaviour
         text1_9.SetActive(true);                // STOP 
 
         yield return new WaitForSeconds(1.5f);
-        t47.SetActive(true);
+       
         text2_9.SetActive(true);                //Sta discusion no tiene ningun sentido T-T
 
         yield return new WaitForSeconds(2);
-        t48.SetActive(true);
+        t47.SetActive(true);
         text3_9.SetActive(true);                //Nancy tiene razón....
 
         yield return new WaitForSeconds(2);
@@ -1211,7 +1332,7 @@ public class SiQuienEres : MonoBehaviour
 
     }
 
-    IEnumerator BuenaSuerte()                                                                                                     //Si eliges "Pues nada.... Buena suerte a tod@s :)"
+    IEnumerator BuenaSuerte()                                                                                                     //If you choose "Pues nada.... Buena suerte a tod@s :)"
     {
         affin.GetComponent<Affinity>().moreaf(10f, "nancy");
         affin.GetComponent<Affinity>().moreaf(5f, "kieran");
@@ -1221,18 +1342,23 @@ public class SiQuienEres : MonoBehaviour
         btn12.SetActive(false);
         btn13.SetActive(false);
         btn14.SetActive(false);
+        t64.SetActive(true);
         text1_10.SetActive(true);
 
         yield return new WaitForSeconds(1.5f);
+        t65.SetActive(true);
         text2_10.SetActive(true);                //Thanksssss ^w^ <3<3<3
 
         yield return new WaitForSeconds(1.5f);
+        t66.SetActive(true);
         text3_10.SetActive(true);                //Gracias, pero no la necesito. Esto está ganado
 
         yield return new WaitForSeconds(2);
+        t67.SetActive(true);
         text4_10.SetActive(true);                //Buena suerte también.... :)
 
         yield return new WaitForSeconds(2);
+        t68.SetActive(true);
         text5_10.SetActive(true);                //Gracias...
         StartCoroutine(Continue3());
 
@@ -1240,26 +1366,31 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator LaQNosEspera()                                                                                                     //Si eliges "Dios....La que nos espera...."
+    IEnumerator LaQNosEspera()                                                                                                     //If you choose "Dios....La que nos espera...."
     {
         affin.GetComponent<Affinity>().moreaf(10f, "kieran");
-        btn7.SetActive(false); //Dile bye bye a los demás botones xD
-        btn8.SetActive(false);
-        btn9.SetActive(false);
-        btn10.SetActive(false);
+        btn11.SetActive(false); //Dile bye bye a los demás botones xD
+        btn12.SetActive(false);
+        btn13.SetActive(false);
+        btn14.SetActive(false);
+        t64.SetActive(true);
         text1_11.SetActive(true);
 
 
         yield return new WaitForSeconds(1.5f);
+        t65.SetActive(true);
         text2_11.SetActive(true);                //Huyhuyhuy no nos gafeees >.<;
 
         yield return new WaitForSeconds(1.5f);
+        t66.SetActive(true);
         text3_11.SetActive(true);                //Con esta panda de individuos... Te lo aseguro...
 
         yield return new WaitForSeconds(2);
+        t67.SetActive(true);
         text4_11.SetActive(true);                //¿Contigo? Pfff, el sufrimiento será interminable...
 
         yield return new WaitForSeconds(2);
+        t68.SetActive(true);
         text5_11.SetActive(true);                //... :(
 
         yield return new WaitForSeconds(2);
@@ -1267,53 +1398,62 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator TrabajoMio()                                                                                                     //El trabajo será mio >:)
+    IEnumerator TrabajoMio()                                                                                                     //If you choose "El trabajo será mio >:)"
     {
         affin.GetComponent<Affinity>().moreaf(10f, "jack");
         affin.GetComponent<Affinity>().moreaf(5f, "nancy");
-        btn7.SetActive(false); //Dile bye bye a los demás botones xD
-        btn8.SetActive(false);
-        btn9.SetActive(false);
-        btn10.SetActive(false);
+        btn11.SetActive(false); //Dile bye bye a los demás botones xD
+        btn12.SetActive(false);
+        btn13.SetActive(false);
+        btn14.SetActive(false);
+        t64.SetActive(true);
         text1_12.SetActive(true);
 
         yield return new WaitForSeconds(1.5f);
+        t65.SetActive(true);
         text2_12.SetActive(true);                //¡HA! Sigue soñando.
 
         yield return new WaitForSeconds(1.5f);
+        t66.SetActive(true);
         text3_12.SetActive(true);                //Hahahahaha eso suena a reto?:p
 
         yield return new WaitForSeconds(2);
+        t67.SetActive(true);
         text4_12.SetActive(true);                //Yo... también quiero conseguirlo....
 
         yield return new WaitForSeconds(2);
+        t68.SetActive(true);
         text5_12.SetActive(true);                //...Si esta es la competencia... no puede ser tan difícil...
         StartCoroutine(Continue3());
     }
 
 
-    IEnumerator None3()                                                                                                     //" "
+    IEnumerator None3()                                                                                                     //If you choose " "
     {
 
-        btn7.SetActive(false); //Dile bye bye a los demás botones xD
-        btn8.SetActive(false);
-        btn9.SetActive(false);
-        btn10.SetActive(false);
+        btn11.SetActive(false); //Dile bye bye a los demás botones xD
+        btn12.SetActive(false);
+        btn13.SetActive(false);
+        btn14.SetActive(false);
 
 
         yield return new WaitForSeconds(1.5f);
+        t64.SetActive(true);
         text1_13.SetActive(true);                // Bueno... pues...emmm... buena suerte a todos... 
 
         yield return new WaitForSeconds(1.5f);
+        t65.SetActive(true);
         text2_13.SetActive(true);                //Ooooowwwww buena suerte Thaiii \ºvº/ <3 <3 <3
 
         yield return new WaitForSeconds(2);
+        t66.SetActive(true);
         text3_13.SetActive(true);                //Heh, gracias, pero el ganador seré yo.
 
         yield return new WaitForSeconds(2);
+        t67.SetActive(true);
         text4_13.SetActive(true);                //Gracias... la vamos a necesitar...
-
         
+
 
         yield return new WaitForSeconds(2);
         StartCoroutine(Continue3());
@@ -1321,38 +1461,48 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator Continue3()                                                                                                     //Sigue la conversación.
+    IEnumerator Continue3()                                                                                                     //The conversation keeps going
     {
         yield return new WaitForSeconds(1.5f);
+        t69.SetActive(true);
         text44.SetActive(true);                //Bueno, mejor no pierdo mas el tiempo.
 
         yield return new WaitForSeconds(1.5f);
+        t70.SetActive(true);
         text45.SetActive(true);                //Contra antes empiece con las pruebas, antes conseguiré el puesto.
 
         yield return new WaitForSeconds(1.5f);
+        t71.SetActive(true);
         text46.SetActive(true);                //Adios.
 
         yield return new WaitForSeconds(1.2f);
+        t72.SetActive(true);
         text47.SetActive(true);                //.Jack ha salido dell chat grupal
 
         yield return new WaitForSeconds(2);
+        t73.SetActive(true);
         text48.SetActive(true);                //Byeeeeeeeee ;))))
 
         yield return new WaitForSeconds(1.5f);
+        t74.SetActive(true);
         text49.SetActive(true);                //Nancy :) ha salido del chat grupal 
 
         yield return new WaitForSeconds(2);
+        t75.SetActive(true);
         text50.SetActive(true);                 //Suerte a todos.... :)
 
         yield return new WaitForSeconds(1.5f);
+        t76.SetActive(true);
         text51.SetActive(true);                 // ... Yo me largo...  
 
         yield return new WaitForSeconds(1.5f);
+        t77.SetActive(true);
         text52.SetActive(true);                 //J.P. ha salido dell chat grupal
 
         yield return new WaitForSeconds(1.2f);
-        text53.SetActive(true);                 //Thailea ha salido dell chat grupal
 
+        text53.SetActive(true);                 //Thailea ha salido dell chat grupal
+        t78.SetActive(true);
         yield return new WaitForSeconds(1);
 
 
@@ -1361,10 +1511,10 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator NonePrim()                                                                                                     //" "
+    IEnumerator NonePrim()                                                                                                     //If you choose " "
     {
 
-        btn1.SetActive(false); //Dile bye bye a los demás botones xD
+        btn1.SetActive(false); //Time to hide the buttons!
         btn2.SetActive(false);
         btn3.SetActive(false);
         btn6.SetActive(false);
@@ -1372,18 +1522,23 @@ public class SiQuienEres : MonoBehaviour
 
 
         yield return new WaitForSeconds(1.5f);
+        t8.SetActive(true);
         text1_14.SetActive(true);                // Soy Nancyyyy :))
 
         yield return new WaitForSeconds(1.5f);
+        t9.SetActive(true);
         text2_14.SetActive(true);                //Y tu?
 
         yield return new WaitForSeconds(2);
+        t10.SetActive(true);
         text3_14.SetActive(true);                //Jack
 
         yield return new WaitForSeconds(2);
+        t11.SetActive(true);
         text4_14.SetActive(true);                //Nice t meet yu <3<3<3<3
 
         yield return new WaitForSeconds(2);
+        t12.SetActive(true);
         text5_14.SetActive(true);                //Eh... ok.
 
         yield return new WaitForSeconds(2);
@@ -1395,13 +1550,14 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator PrefieroNoPresent()                                                                                            //Si eliges "¿Y por qué debería presentarme? No os conozco de nada."
+    IEnumerator PrefieroNoPresent()                                                                                            //If you choose "¿Y por qué debería presentarme? No os conozco de nada."
     {
         affin.GetComponent<Affinity>().lessaf(10f, "nancy");
         affin.GetComponent<Affinity>().moreaf(10f, "kieran");
 
+        t13.SetActive(true);
         text1_4otro.SetActive(true); //¿Y por qué debería presentarme? No os conozco de nada.
-        btn3.SetActive(false);   //Dile bye bye a los demás botones xD
+        btn3.SetActive(false);   //Time to hide the buttons!
         btn4.SetActive(false);
         btn5.SetActive(false);
         btn5alt.SetActive(false);
@@ -1409,6 +1565,7 @@ public class SiQuienEres : MonoBehaviour
 
 
         yield return new WaitForSeconds(1.5f);
+        t14.SetActive(true);
         text2_4.SetActive(true);                //Hayyyy cieloooo.  
 
 
@@ -1417,10 +1574,12 @@ public class SiQuienEres : MonoBehaviour
 
 
         yield return new WaitForSeconds(2);
+        
         text4_4.SetActive(true);                //Pero lo que dice es razonable.
 
 
         yield return new WaitForSeconds(2);
+        t15.SetActive(true);
         text5_4.SetActive(true);                //T_T
 
 
@@ -1428,14 +1587,14 @@ public class SiQuienEres : MonoBehaviour
         StartCoroutine(Continue1());
 
         yield return new WaitForSeconds(60);
-        StartCoroutine(Nopresen());
+        StartCoroutine(Noname());
 
     }
 
-    IEnumerator NondedNon()                                                                                            //Si eliges el none después del primer none .
+    IEnumerator NondedNon()                                                                                            //If you choose the none after the first none .
     {
 
-        btn3.SetActive(false);   //Dile bye bye a los demás botones xD
+        btn3.SetActive(false);   //Time to hide the buttons!
         btn4.SetActive(false);
         btn5.SetActive(false);
         btn5alt.SetActive(false);
@@ -1443,24 +1602,31 @@ public class SiQuienEres : MonoBehaviour
 
 
         yield return new WaitForSeconds(1.5f);
+        t12.SetActive(true);
+        t13.SetActive(true);
         text1_15.SetActive(true);                //;)))))))))  
 
 
         yield return new WaitForSeconds(1.5f);
+        t14.SetActive(true);
         text2_15.SetActive(true);                //Lol.
 
 
         yield return new WaitForSeconds(2);
+        
         text3_15.SetActive(true);                //Nancy... ¿tú cuantos años tienes...?
 
 
         yield return new WaitForSeconds(2);
+        t15.SetActive(true);
         text4_15.SetActive(true);                //Uy eso es secret ;D
 
         yield return new WaitForSeconds(2);
+        t16.SetActive(true);
         text5_15.SetActive(true);                //Emmm ya, claro...
 
         yield return new WaitForSeconds(2);
+       
         text6_15.SetActive(true);                //Hehe pero kconste ksoy jovensita ;D
 
 
@@ -1474,12 +1640,12 @@ public class SiQuienEres : MonoBehaviour
 
 
 
-    IEnumerator BuenoSiNoQuiereSinPresen()                                                                                                     //Si eliges "Bueno... si no se quiere presentar, no pasa nada...¿no?"
+    IEnumerator BuenoSiNoQuiereSinPresen()                                                                                                     //If you choose "Bueno... si no se quiere presentar, no pasa nada...¿no?"
     {
         affin.GetComponent<Affinity>().moreaf(5f, "kieran");
 
 
-        btn7no.SetActive(false); //Dile bye bye a los demás botones xD
+        btn7no.SetActive(false); //Time to hide the buttons!
         btn8no.SetActive(false);
         btn9no.SetActive(false);
         btn10no.SetActive(false);
@@ -1508,13 +1674,48 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-
-    IEnumerator PorQueNoSimplementenopres()                                                                                                     //Si eliges "¿Por que no simplemente dices tu nombre y ya? No creo que sea tan difícil."
+    IEnumerator BuenoSiNoQuierenoname()                                                                                                     //If you choose "Bueno... si no se quiere presentar, no pasa nada...¿no?"
     {
-        affin.GetComponent<Affinity>().moreaf(10f, "jack");
-        affin.GetComponent<Affinity>().lessaf(10f, "kieran");
-        affin.GetComponent<Affinity>().moreaf(5f, "nancy");
-        btn7no.SetActive(false); //Dile bye bye a los demás botones xD
+        affin.GetComponent<Affinity>().moreaf(10f, "kieran");
+
+
+        btn7nn.SetActive(false); //Time to hide the buttons!
+        btn8nn.SetActive(false);
+        btn9nn.SetActive(false);
+        btn10.SetActive(false);
+        t45.SetActive(true);
+        text1_6.SetActive(true);
+
+        yield return new WaitForSeconds(1.5f);
+        t46.SetActive(true);
+        text1_16.SetActive(true);                //... ¿Por qué solo me insistís a mi, cuando queda gente sin presentarse?
+
+        yield return new WaitForSeconds(1.5f);
+        t47.SetActive(true);
+        text2_16nn.SetActive(true);                //Porque a diferencia de otros,no a sido borde cuando se ha negado
+
+        yield return new WaitForSeconds(2);
+        t48.SetActive(true);
+        text3_16nn.SetActive(true);                //Juuuuu yo keria saberrr T-T
+
+        yield return new WaitForSeconds(2);
+        btn3no.SetActive(true);
+        btn4no.SetActive(true);
+        btn5no.SetActive(true);
+        btn6no.SetActive(true);
+
+
+    }
+
+
+
+    IEnumerator PorQueNoSimplementenopres()                                                                                                     //If you choose "¿Por que no simplemente dices tu nombre y ya? No creo que sea tan difícil."
+    {
+        affin.GetComponent<Affinity>().lessaf(10f, "jack");
+        affin.GetComponent<Affinity>().lessaf(20f, "kieran");
+        affin.GetComponent<Affinity>().lessaf(10f, "nancy");
+        affin.GetComponent<Affinity>().lessaf(10f, "thai");
+        btn7no.SetActive(false); //Time to hide the buttons!
         btn8no.SetActive(false);
         btn9no.SetActive(false);
         btn10no.SetActive(false);
@@ -1547,13 +1748,52 @@ public class SiQuienEres : MonoBehaviour
 
     }
 
-
-    IEnumerator VengaNoDiscutaisnopres()                                                                                                     //Venga... No discutais.... Recordad que estamos a prueba para el trabajo...
+    IEnumerator PorQueNoSimplementenoname()                                                                                                     //If you choose "¿Por que no simplemente dices tu nombre y ya? No creo que sea tan difícil."
     {
-        affin.GetComponent<Affinity>().moreaf(10f, "thai");
-        affin.GetComponent<Affinity>().moreaf(10f, "kieran");
+        affin.GetComponent<Affinity>().lessaf(10f, "jack");
+        affin.GetComponent<Affinity>().lessaf(20f, "kieran");
+        affin.GetComponent<Affinity>().lessaf(10f, "nancy");
+        affin.GetComponent<Affinity>().lessaf(10f, "thai");
+        btn7nn.SetActive(false); //Time to hide the buttons!
+        btn8nn.SetActive(false);
+        btn9nn.SetActive(false);
+        btn10.SetActive(false);
+        t45.SetActive(true);
+        text1_17.SetActive(true);
 
-        btn7no.SetActive(false); //Dile bye bye a los demás botones xD
+        yield return new WaitForSeconds(1.5f);
+        t46.SetActive(true);
+        text2_17.SetActive(true);                //Holiiii???
+
+        yield return new WaitForSeconds(1.5f);
+        t47.SetActive(true);
+        text3_17.SetActive(true);                //...Dice alguien que no se ha presentado...
+
+        yield return new WaitForSeconds(2);
+        t48.SetActive(true);
+        text4_17.SetActive(true);                //La hipocresía lol.
+
+        yield return new WaitForSeconds(2);
+        t49.SetActive(true);
+        text5_17nn.SetActive(true);                //Emm... ¿Como te llamas?
+
+
+
+        yield return new WaitForSeconds(2);
+        btn3no.SetActive(true);
+        btn4no.SetActive(true);
+        btn5no.SetActive(true);
+        btn6no.SetActive(true);
+
+    }
+
+
+    IEnumerator VengaNoDiscutaisnopres()                                                                                                     //If you choose "Venga... No discutais.... Recordad que estamos a prueba para el trabajo..."
+    {
+        affin.GetComponent<Affinity>().moreaf(5f, "thai");
+        affin.GetComponent<Affinity>().moreaf(5f, "kieran");
+
+        btn7no.SetActive(false); //Time to hide the buttons!
         btn8no.SetActive(false);
         btn9no.SetActive(false);
         btn10no.SetActive(false);
@@ -1566,7 +1806,7 @@ public class SiQuienEres : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         t47.SetActive(true);
-        text3_18.SetActive(true);                //¿Y usted es el encargado...?
+        text3_18.SetActive(true);                //¿...Y usted es el encargado...?
 
 
         yield return new WaitForSeconds(2);
@@ -1578,12 +1818,43 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator None2nopres()                                                                                                     //" "
+    IEnumerator VengaNoDiscutaisnoname()                                                                                                     //If you choose "Venga... No discutais.... Recordad que estamos a prueba para el trabajo..."
+    {
+        affin.GetComponent<Affinity>().moreaf(10f, "thai");
+        affin.GetComponent<Affinity>().moreaf(10f, "kieran");
+
+        btn7nn.SetActive(false); //Time to hide the buttons!
+        btn8nn.SetActive(false);
+        btn9nn.SetActive(false);
+        btn10.SetActive(false);
+        t45.SetActive(true);
+        text1_18.SetActive(true);
+
+        yield return new WaitForSeconds(1.5f);
+        t46.SetActive(true);
+        text2_18.SetActive(true);                //OMG el desconocip tiene razooon :(
+
+        yield return new WaitForSeconds(1.5f);
+        t47.SetActive(true);
+        text3_18nn.SetActive(true);                //Cierto... Pero como tal, deberías presentarte.
+
+
+        yield return new WaitForSeconds(2);
+        btn3no.SetActive(true);
+        btn4no.SetActive(true);
+        btn5no.SetActive(true);
+        btn6no.SetActive(true);
+
+    }
+
+
+    IEnumerator None2nopres()                                                                                                     //If you choose " "
     {
 
-        btn7.SetActive(false); //Dile bye bye a los demás botones xD
+        btn7.SetActive(false); //Time to hide the buttons!D
         btn8.SetActive(false);
         btn9.SetActive(false);
+        btn10.SetActive(false);
         btn7no.SetActive(false);
         btn8no.SetActive(false);
         btn9no.SetActive(false);
@@ -1599,7 +1870,7 @@ public class SiQuienEres : MonoBehaviour
         text2_9.SetActive(true);                //Sta discusion no tiene ningun sentido T-T
 
         yield return new WaitForSeconds(2);
-        t48.SetActive(true);
+        
         text3_9.SetActive(true);                //Nancy tiene razón....
 
         yield return new WaitForSeconds(2);
@@ -1636,12 +1907,14 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator YoSoyMc2()                                                                                                   //Si eliges "Yo soy MC"
+    IEnumerator YoSoyMcnopres()                                                                                                   //If you choose "Yo soy MC"
     {
         affin.GetComponent<Affinity>().moreaf(10f, "nancy");
-        t12.SetActive(true);
+        affin.GetComponent<Affinity>().moreaf(10f, "thai");
+        affin.GetComponent<Affinity>().moreaf(5f, "jack");
+        t49.SetActive(true);
         text1_19.SetActive(true); //Yo soy MC, mucho gusto                                                   
-        btn3no.SetActive(false);   //Dile bye bye a los demás botones xD
+        btn3no.SetActive(false);   //Time to hide the buttons!
         btn4no.SetActive(false);
         btn5no.SetActive(false);
         btn6no.SetActive(false);
@@ -1651,21 +1924,21 @@ public class SiQuienEres : MonoBehaviour
 
 
         yield return new WaitForSeconds(1.5f);
-        t13.SetActive(true);
+        t50.SetActive(true);
         text2_19.SetActive(true);                //Igualmenteeeee yopsoy Nancyyyy ^.^ 
 
 
         yield return new WaitForSeconds(2);
-        t14.SetActive(true);
+        t51.SetActive(true);
         text3_19.SetActive(true);                //Jack.Encantado
 
 
         yield return new WaitForSeconds(2);
-        t15.SetActive(true);
+        t52.SetActive(true);
         text4_19.SetActive(true);                //Yo soy Thai, encantada :)
 
         yield return new WaitForSeconds(2);
-        t15.SetActive(true);
+        t53.SetActive(true);
         text5_19.SetActive(true);                //Ejhemmmmm :))))))))
 
 
@@ -1679,35 +1952,37 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator Mc2()                                                                                                        //Si eliges "MC"
+    IEnumerator Mcnopres()                                                                                                        //If you choose "MC"
     {
         affin.GetComponent<Affinity>().moreaf(10f, "jack");
-        t12.SetActive(true);
+        t49.SetActive(true);
         text1_20.SetActive(true); //MC
-        btn3.SetActive(false);   //Dile bye bye a los demás botones xD
-        btn4.SetActive(false);
-        btn5.SetActive(false);
+        btn3no.SetActive(false);   //Time to hide the buttons!
+        btn4no.SetActive(false);
+        btn5no.SetActive(false);
+        btn6no.SetActive(false);
         btn6otro.SetActive(false);
         btn5alt.SetActive(false);
         btn6otro2.SetActive(false);
 
 
         yield return new WaitForSeconds(1.5f);
-        t13.SetActive(true);
+        t50.SetActive(true);
         text2_20.SetActive(true);                // Hola, soy Jack.
 
 
         yield return new WaitForSeconds(1.5f);
+        t51.SetActive(true);
         text3_20.SetActive(true);                //Yo Nancyyyyy :D
 
 
         yield return new WaitForSeconds(2);
-        t14.SetActive(true);
+        t52.SetActive(true);
         text4_20.SetActive(true);                //Soy Thai :)
 
 
         yield return new WaitForSeconds(2);
-        t15.SetActive(true);
+        t53.SetActive(true);
         text5_20.SetActive(true);                //Bueno, creo que solo queda uno por presentarse...
 
 
@@ -1721,36 +1996,37 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator YPorQueDeberia2()                                                                                            //Si eliges "¿Y por qué debería presentarme? No os conozco de nada."
+    IEnumerator YPorQueDeberianopres()                                                                                            //If you choose "¿Y por qué debería presentarme? No os conozco de nada."
     {
 
         affin.GetComponent<Affinity>().lessaf(10f, "nancy");
         affin.GetComponent<Affinity>().moreaf(10f, "kieran");
-        t12.SetActive(true);
+        t49.SetActive(true);
         text1_21.SetActive(true); //¿Y por qué debería presentarme? No os conozco de nada.
-        btn3.SetActive(false);   //Dile bye bye a los demás botones xD
-        btn4.SetActive(false);
-        btn5.SetActive(false);
+        btn3no.SetActive(false);   //Time to hide the buttons!
+        btn4no.SetActive(false);
+        btn5no.SetActive(false);
+        btn6no.SetActive(false);
         btn6otro.SetActive(false);
 
 
         yield return new WaitForSeconds(1.5f);
-        t13.SetActive(true);
+        t50.SetActive(true);
         text2_21.SetActive(true);                //Huyyyy otro igkual  u_u
 
 
         yield return new WaitForSeconds(1.5f);
-        t13.SetActive(true);
+        t51.SetActive(true);
         text3_21.SetActive(true);                //Bueno, entonces no hace falta que me presente tampoco, ¿no?
 
 
         yield return new WaitForSeconds(2);
-        t14.SetActive(true);
+        t52.SetActive(true);
         text4_21.SetActive(true);                //Al menos no ha sido borde al negarse a presentarse, no como otros...
 
 
         yield return new WaitForSeconds(2);
-        t15.SetActive(true);
+        t53.SetActive(true);
         text5_21.SetActive(true);                //Vengaaaaa poresentate y asin no hay tntos desconocidossss
 
 
@@ -1764,35 +2040,36 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator None1delnopresen()                                                                                                     //Si eliges "   "
+    IEnumerator None1delnopresen()                                                                                                     //If you choose "   "
     {
         affin.GetComponent<Affinity>().lessaf(10f, "nancy");
         affin.GetComponent<Affinity>().lessaf(10f, "jack");
         affin.GetComponent<Affinity>().lessaf(10f, "kieran");
         affin.GetComponent<Affinity>().lessaf(10f, "thai");
-        btn3.SetActive(false);   //Dile bye bye a los demás botones xD
-        btn4.SetActive(false);
-        btn5.SetActive(false);
+        btn3no.SetActive(false);   //Time to hide the buttons!
+        btn4no.SetActive(false);
+        btn5no.SetActive(false);
         btn6otro.SetActive(false);
+        btn6no.SetActive(false);
 
 
 
         yield return new WaitForSeconds(1.5f);
-        t12.SetActive(true);
+        t49.SetActive(true);
         text1_22.SetActive(true);                //... 
 
         yield return new WaitForSeconds(1.5f);
-        t13.SetActive(true);
+        t50.SetActive(true);
         text2_22.SetActive(true);                //¡Felicidades! oficialmente ha aparecido alguien mas maleducado que Kieran.
 
         yield return new WaitForSeconds(1.5f);
-        t13.SetActive(true);
+        t51.SetActive(true);
         text3_22.SetActive(true);                //...:(
 
         yield return new WaitForSeconds(2);
-        t14.SetActive(true);
+        t52.SetActive(true);
         text4_22.SetActive(true);                //k brdeeeee vnga presentate y asi al mneos desaparecen los malos rllos :D
-
+        t53.SetActive(true);
 
 
         yield return new WaitForSeconds(2);
@@ -1807,29 +2084,35 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator BuenaSuertenopres()                                                                                                     //Si eliges "Pues nada.... Buena suerte a tod@s :)"
+    IEnumerator BuenaSuertenopres()                                                                                                     //If you choose "Pues nada.... Buena suerte a tod@s :)"
     {
-        affin.GetComponent<Affinity>().moreaf(10f, "nancy");
-        affin.GetComponent<Affinity>().moreaf(5f, "kieran");
-        affin.GetComponent<Affinity>().moreaf(10f, "thai");
+        affin.GetComponent<Affinity>().moreaf(5f, "nancy");
+        
+        affin.GetComponent<Affinity>().moreaf(5f, "thai");
         affin.GetComponent<Affinity>().moreaf(5f, "jack");
-        btn11no.SetActive(false); //Dile bye bye a los demás botones xD
+        btn11no.SetActive(false); //Time to hide the buttons!
         btn12no.SetActive(false);
         btn13no.SetActive(false);
         btn14no.SetActive(false);
+        t64.SetActive(true);
         text1_23.SetActive(true);
 
         yield return new WaitForSeconds(1.5f);
+        t65.SetActive(true);
         text2_23.SetActive(true);                //Uyyy thks eeehhhhh desconocidp????? `-´;
 
 
         yield return new WaitForSeconds(1.5f);
+        t66.SetActive(true);
         text3_23.SetActive(true);                //... Tanta insistencia para que me presente, ¿y hay alguien que ni siquiera a participado en la conversación?...
 
 
         yield return new WaitForSeconds(2);
+        t67.SetActive(true);
         text4_23.SetActive(true);                //¿Quién eres tu?
-
+        yield return new WaitForSeconds(2);
+        text5_23.SetActive(true);                //Apareces un pko tarde nu? ¬_¬;;
+        t68.SetActive(true);
 
         StartCoroutine(Continue3());
 
@@ -1837,52 +2120,66 @@ public class SiQuienEres : MonoBehaviour
     }
 
 
-    IEnumerator LaQNosEsperanopres()                                                                                                     //Si eliges "Dios....La que nos espera...."
+    IEnumerator LaQNosEsperanopres()                                                                                                     //If you choose "Dios....La que nos espera...."
     {
-        affin.GetComponent<Affinity>().moreaf(10f, "kieran");
-       btn11no.SetActive(false); //Dile bye bye a los demás botones xD
-       btn12no.SetActive(false);
-       btn13no.SetActive(false);
+        affin.GetComponent<Affinity>().lessaf(10f, "kieran");
+        affin.GetComponent<Affinity>().lessaf(10f, "nancy");
+        affin.GetComponent<Affinity>().lessaf(5f, "jack");
+        affin.GetComponent<Affinity>().lessaf(5f, "thai");
+        btn11no.SetActive(false); //Time to hide the buttons!
+        btn12no.SetActive(false);
+        btn13no.SetActive(false);
         btn14no.SetActive(false);
+        t64.SetActive(true);
         text1_24.SetActive(true);
 
 
         yield return new WaitForSeconds(1.5f);
+        t65.SetActive(true);
         text2_24.SetActive(true);                //Eeeeemmmmmm hola?????? ;-;
 
 
         yield return new WaitForSeconds(1.5f);
+        t66.SetActive(true);
         text3_24.SetActive(true);                //¿Y tu eres...?
 
         yield return new WaitForSeconds(2);
+        t67.SetActive(true);
         text4_24.SetActive(true);                //...
-
+        yield return new WaitForSeconds(2);
+        text5_24.SetActive(true);                //...:(
+        t68.SetActive(true);
 
         StartCoroutine(Continue3());
     }
 
 
-    IEnumerator TrabajoMionopres()                                                                                                     //El trabajo será mio >:)
+    IEnumerator TrabajoMionopres()                                                                                                     //If you choose "El trabajo será mio >:)"
     {
         affin.GetComponent<Affinity>().moreaf(10f, "jack");
         affin.GetComponent<Affinity>().moreaf(5f, "nancy");
-       btn11no.SetActive(false); //Dile bye bye a los demás botones xD
-       btn12no.SetActive(false);
-       btn13no.SetActive(false);
+        btn11no.SetActive(false); //Time to hide the buttons!
+        btn12no.SetActive(false);
+        btn13no.SetActive(false);
         btn14no.SetActive(false);
+        t64.SetActive(true);
         text1_25.SetActive(true);
 
         yield return new WaitForSeconds(1.5f);
+        t65.SetActive(true);
         text2_25.SetActive(true);                //Whoaaaaaaa un cmpetidor aparecio d ela nadaaaaa o.O
 
 
         yield return new WaitForSeconds(1.5f);
+        t66.SetActive(true);
         text3_25.SetActive(true);                //Wow, ¿Y tu de dónde sales? ¿Crees que vas a ganarme
 
         yield return new WaitForSeconds(2);
+        t67.SetActive(true);
         text4_25.SetActive(true);                //...
 
         yield return new WaitForSeconds(2);
+        t68.SetActive(true);
         text5_25.SetActive(true);                //Cuanto espíritu de competición ^-^;
         StartCoroutine(Continue3());
     }
@@ -1891,22 +2188,26 @@ public class SiQuienEres : MonoBehaviour
     IEnumerator nopres()                                                                                                     //" "
     {
 
-        btn11no.SetActive(false); //Dile bye bye a los demás botones xD
+        btn11no.SetActive(false); //Time to hide the buttons!
         btn12no.SetActive(false);
         btn13no.SetActive(false);
         btn14no.SetActive(false);
 
 
         yield return new WaitForSeconds(1.5f);
+        t64.SetActive(true);
         text1_13.SetActive(true);                // Bueno... pues...emmm... buena suerte a todos... 
 
         yield return new WaitForSeconds(1.5f);
+        t65.SetActive(true);
         text2_13.SetActive(true);                //Ooooowwwww buena suerte Thaiii \ºvº/ <3 <3 <3
 
         yield return new WaitForSeconds(2);
+        t66.SetActive(true);
         text3_13.SetActive(true);                //Heh, gracias, pero el ganador seré yo.
 
         yield return new WaitForSeconds(2);
+        t67.SetActive(true);
         text4_13.SetActive(true);                //Gracias... la vamos a necesitar...
 
         

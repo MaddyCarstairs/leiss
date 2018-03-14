@@ -11,7 +11,8 @@ public class Newanimationcrtine : MonoBehaviour {
     [SerializeField] GameObject text5;
     [SerializeField] GameObject text6;
     [SerializeField] GameObject text7;
-    
+    [SerializeField] GameObject text8;
+
 
     [SerializeField] GameObject t0;
     [SerializeField] GameObject t1;
@@ -75,7 +76,7 @@ public class Newanimationcrtine : MonoBehaviour {
         yield return new WaitForSeconds(3);
         text6.SetActive(true);
         text7.SetActive(true);
-        
-        
+        text8.SetActive(true);
+
     }
 }
